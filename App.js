@@ -3,6 +3,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import GetStarted from "./screens/GetStarted";
+import Login from "./screens/Login";
+import Register from "./screens/Register";
 import SignUp from "./screens/SignUp";
 
 const Stack = createNativeStackNavigator();
@@ -12,6 +14,7 @@ export default function App() {
 		"Gloock-Regular": require("./assets/fonts/Gloock-Regular.ttf"),
 		"EBGaramond-Medium": require("./assets/fonts/EBGaramond-Medium.ttf"),
 		"EBGaramond-SemiBold": require("./assets/fonts/EBGaramond-SemiBold.ttf"),
+		"EBGaramond-ExtraBold": require("./assets/fonts/EBGaramond-ExtraBold.ttf"),
 	});
 	if (!fontsLoaded) {
 		return (
@@ -27,7 +30,9 @@ export default function App() {
 				screenOptions={{ headerShown: false }}
 			>
 				<Stack.Screen name="GetStarted" component={GetStarted} />
-        <Stack.Screen name="SignUp" component={SignUp} />
+				<Stack.Screen name="SignUp" component={SignUp} />
+				<Stack.Screen name="Login" component={Login} />
+				<Stack.Screen name="Register" component={Register} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);

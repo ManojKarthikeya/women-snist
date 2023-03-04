@@ -1,16 +1,11 @@
-import {
-	View,
-	Text,
-	StyleSheet,
-	TouchableOpacity,
-	Image,
-	Animated,
-} from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, Image } from "react-native";
 import React from "react";
 import fonts from "../constants/fonts";
 import colors from "../constants/colors";
+import { useNavigation } from "@react-navigation/native";
 
 export default function SignUp() {
+	const navigate = useNavigation();
 	return (
 		<View style={styles.container}>
 			<Image
@@ -26,9 +21,21 @@ export default function SignUp() {
 			</Text>
 			<View style={styles.buttonContainer}>
 				<TouchableOpacity style={styles.register}>
-					<Text style={{...styles.buttonText, color: 'white'}}>Register</Text>
+					<Text
+						style={{ ...styles.buttonText, color: "white" }}
+						onPress={() => {
+							navigate.navigate("Register");
+						}}
+					>
+						Register
+					</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.login}>
+				<TouchableOpacity
+					style={styles.login}
+					onPress={() => {
+						navigate.navigate("Login");
+					}}
+				>
 					<Text style={styles.buttonText}>Login</Text>
 				</TouchableOpacity>
 			</View>
@@ -71,6 +78,7 @@ const styles = StyleSheet.create({
 	},
 
 	register: {
+		fontFamily: "EBGaramond-ExtraBold",
 		backgroundColor: "black",
 		flex: 1,
 		paddingVertical: 8,

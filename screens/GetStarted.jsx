@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import React from "react";
 import fonts from "../constants/fonts";
-import { useFonts } from "expo-font";
 import colors from "../constants/colors";
 import { useNavigation } from "@react-navigation/native";
 
@@ -21,7 +20,7 @@ export default function GetStarted() {
 				source={require("../assets/images/start0.png")}
 			/>
 			<Text style={{ ...fonts.h1, paddingVertical: 10 }}>
-				Enterprise team collaboration.
+				Enterprise team something.
 			</Text>
 			<Text style={fonts.subtext}>
 				Bring together your files, your tools, projects and people.

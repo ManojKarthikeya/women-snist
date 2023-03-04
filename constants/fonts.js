@@ -13,6 +13,6 @@ const  fonts = StyleSheet.create({
         textAlign : 'center',
         color : 'grey'
     },
-})
+}) 
 
 export default fonts
