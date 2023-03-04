@@ -24,7 +24,7 @@ export default function Login() {
 					style={styles.input}
 					placeholder="Password"
 					textContentType="newPassword"
-          secureTextEntry
+					secureTextEntry
 				/>
 				<TouchableOpacity>
 					<Text style={styles.forgotPassword}>Forgot Password?</Text>
@@ -50,15 +50,15 @@ const styles = StyleSheet.create({
 		flex: 1,
 		width: "100%",
 		padding: 25,
-    paddingTop : 35,
+		paddingTop: 35,
 		justifyContent: "center",
 	},
 	input: {
 		fontFamily: "EBGaramond-SemiBold",
 		fontSize: 20,
 		margin: 15,
-    paddingLeft : 2,
-    borderBottomWidth : 0.5
+		paddingLeft: 2,
+		borderBottomWidth: 0.5,
 	},
 	title: {
 		fontFamily: "Gloock-Regular",
@@ -108,6 +108,6 @@ const styles = StyleSheet.create({
 		fontFamily: "EBGaramond-SemiBold",
 		textAlign: "right",
 		fontSize: 17,
-    marginRight : 10
+		marginRight: 10,
 	},
 });
