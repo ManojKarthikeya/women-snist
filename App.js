@@ -4,6 +4,7 @@ import { useFonts } from "expo-font";
 import { SafeAreaView, StyleSheet, Text, View } from "react-native";
 import GetStarted from "./screens/GetStarted";
 import Login from "./screens/Login";
+import ProfilePictureUpload from "./screens/ProfilePictureUpload";
 import Register from "./screens/Register";
 import SignUp from "./screens/SignUp";
 
@@ -33,6 +34,7 @@ export default function App() {
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="Register" component={Register}/>
+				<Stack.Screen name = "ProfilePictureUpload" component={ProfilePictureUpload}/>
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
