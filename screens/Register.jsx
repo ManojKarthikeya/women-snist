@@ -1,25 +1,39 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Animated } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
+import Password from "./register/Password";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Deatils from "./register/Details";
+import ProfilePictureUpload from "./register/ProfilePictureUpload";
+
+
+const Stack = createNativeStackNavigator();
 
 export default function Register() {
-	return (
+	return (	
 		<SafeAreaView style={styles.container}>
-			<View>
-				<Text>Register</Text>
-			</View>
+			<Text style={styles.heading}>Register</Text>
+			<NavigationContainer independent={true}>
+				<Stack.Navigator screenOptions={{ headerShown: false }}>
+					<Stack.Screen name="details" component={Deatils} />
+					<Stack.Screen name="createpassword" component={Password} />
+					<Stack.Screen name="uploadphoto" component={ProfilePictureUpload} />
+				</Stack.Navigator>
+			</NavigationContainer>
 		</SafeAreaView>
 	);
 }
 
 const styles = StyleSheet.create({
 	container: {
-		justifyContent: "center",
-		alignItems: "center",
 		flex: 1,
 	},
 
-	view: {
-		color: "red",
+	heading: {
+		fontFamily: "Gloock-Regular",
+		fontSize: 36,
+		paddingLeft: 18,
+		paddingTop: 10,
 	},
 });

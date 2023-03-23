@@ -8,8 +8,11 @@ import {
 import React from "react";
 import fonts from "../constants/fonts";
 import { SafeAreaView } from "react-native-safe-area-context";
+import { useNavigation } from "@react-navigation/native";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function Login() {
+	const navigate = useNavigation()
 	return (
 		<SafeAreaView style={styles.container}>
 			<Text style={styles.title}>Welcome back,</Text>
@@ -33,7 +36,7 @@ export default function Login() {
 			<View style={styles.bottom}>
 				<View style={styles.bottomtext}>
 					<Text style={styles.subtext}>Don't have an account?</Text>
-					<TouchableOpacity>
+					<TouchableOpacity onPress={()=>{navigate.navigate('Register')}}>
 						<Text style={styles.register}>Register</Text>
 					</TouchableOpacity>
 				</View>
@@ -50,7 +53,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		width: "100%",
 		padding: 25,
-		paddingTop: 35,
+		paddingTop: 45,
 		justifyContent: "center",
 	},
 	input: {
