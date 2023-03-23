@@ -103,7 +103,11 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator
+<<<<<<< HEAD
 				initialRouteName="Verify"
+=======
+				initialRouteName="ProfilePictureUpload"
+>>>>>>> 18c22a201c601d36dc7f49548ad3ddc222240f60
 				screenOptions={{ headerShown: false }}
 			>
 				<Stack.Screen name="GetStarted" component={GetStarted} />
@@ -123,3 +127,6 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
+
+
+
