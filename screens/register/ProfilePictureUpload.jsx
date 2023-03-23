@@ -32,6 +32,8 @@ export default function ProfilePictureUpload() {
     }
   };
 
+  console.log(image)
+
   const openCamera = async () => {
     const permissionResult = await ImagePicker.requestCameraPermissionsAsync();
     if (permissionResult.granted === false) {

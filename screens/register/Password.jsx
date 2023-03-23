@@ -131,7 +131,7 @@ export default function Password() {
 						<Text style={styles.next}>Next</Text>
 						<MaterialIcons name="navigate-next" size={25} />
 					</TouchableOpacity>
-				) : (
+				) : (	
 					<View
 						style={{
 							...styles.touch,

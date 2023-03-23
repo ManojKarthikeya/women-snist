@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Deatils from "./register/Details";
 import ProfilePictureUpload from "./register/ProfilePictureUpload";
+import Verify from "./register/Verify";
 
 
 const Stack = createNativeStackNavigator();
@@ -19,6 +20,7 @@ export default function Register() {
 					<Stack.Screen name="details" component={Deatils} />
 					<Stack.Screen name="createpassword" component={Password} />
 					<Stack.Screen name="uploadphoto" component={ProfilePictureUpload} />
+					<Stack.Screen name="otpverify" component={Verify} />
 				</Stack.Navigator>
 			</NavigationContainer>
 		</SafeAreaView>
