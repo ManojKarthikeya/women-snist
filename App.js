@@ -27,7 +27,7 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator
-				initialRouteName="GetStarted"
+				initialRouteName="ProfilePictureUpload"
 				screenOptions={{ headerShown: false }}
 			>
 				<Stack.Screen name="GetStarted" component={GetStarted} />
@@ -47,3 +47,6 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
+
+
+

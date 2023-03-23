@@ -9,6 +9,7 @@ import {
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import * as ImagePicker from "expo-image-picker";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 
 export default function ProfilePictureUpload() {
   const [image, setImage] = useState(null);
@@ -47,16 +48,16 @@ export default function ProfilePictureUpload() {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Profile photo</Text>
+        {/* <Text>Profile photo</Text> */}
         {image && <Image source={{ uri: image }} style={styles.image} />}
         <View style={styles.buttonView}>
-          <TouchableOpacity onPress={pickImage}>
-            <Text>Pick an image</Text>
+          <TouchableOpacity onPress={pickImage} style={styles.appButtonContainer}>
+            <Text style={styles.buttonText}>Pick an image</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonView}>
-          <TouchableOpacity onPress={openCamera}>
-            <Text>Take a picture</Text>
+          <TouchableOpacity onPress={openCamera} style={styles.appButtonContainer}>
+            <Text style={styles.buttonText}>Take a picture</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -71,17 +72,28 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
   image: {
-    width: 200,
-    height: 200,
-    borderRadius: 100,
+    width: 300,
+    height: 300,
+    marginBottom: 30,
+    borderRadius: 150,
   },
   buttonText: {
     fontFamily: "EBGaramond-Medium",
   },
-  buttonView: {
-    borderColor: "black",
+  // buttonView: {
+  //   borderColor: "black",
+  //   borderWidth: 1,
+  //   borderRadius: 4,
+  // },
+  appButtonContainer: {
+
+    width: 300,
+    height: 50,
     borderWidth: 1,
-    borderRadius: 4,
-    
-  },
+    borderRadius: 10,
+    padding: 10,
+    margin: 12
+  
+  }
 });
+
