@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-export default function CreatePost() {
+export default function Following() {
   return (
     <View>
-      <Text>CreatePost</Text>
+      <Text>Following</Text>
     </View>
   )
 }

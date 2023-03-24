@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Home() {
 	const { width } = useWindowDimensions();
-    const navigate = useNavigation()
+	const navigate = useNavigation();
 	const [vi, setVi] = useState(false);
 	return (
 		<SafeAreaView style={styles.container}>
@@ -68,16 +68,16 @@ export default function Home() {
 			</View>
 			{!vi ? (
 				<ScrollView>
-					<Community width={width} />
-					<Community width={width} />
+					<Community width={width} navigate={navigate} />
+					<Community width={width} navigate={navigate} />
 				</ScrollView>
 			) : (
 				<ScrollView>
-					<Community width={width} />
-					<Community width={width} />
-					<Community width={width} />
-					<Community width={width} />
-					<Community width={width} />
+					<Community width={width} navigate={navigate} />
+					<Community width={width} navigate={navigate} />
+					<Community width={width} navigate={navigate} />
+					<Community width={width} navigate={navigate} />
+					<Community width={width} navigate={navigate} />
 				</ScrollView>
 			)}
 			<TouchableOpacity
@@ -87,7 +87,10 @@ export default function Home() {
 					alignItems: "center",
 					backgroundColor: "black",
 					justifyContent: "center",
-				}} onPress={()=>{navigate.navigate('create')}}
+				}}
+				onPress={() => {
+					navigate.navigate("create");
+				}}
 			>
 				<Ionicons name="add" size={20} color="white" />
 				<Text

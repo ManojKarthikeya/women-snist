@@ -12,9 +12,10 @@ export default function Community({
 	width,
 	name = "My Community",
 	members = 10,
+	navigate
 }) {
 	return (
-		<TouchableOpacity>
+		<TouchableOpacity  onPress={()=>{navigate.navigate('page')}}>
 			<View style={{ paddingHorizontal: 10, paddingTop : 10 }}>
 				<ImageBackground
 					source={require("../assets/images/stock.jpg")}

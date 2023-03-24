@@ -30,7 +30,7 @@ export default function Create() {
 			quality: 1,
 		});
 		console.log(result);
-		if (!result.canceled) {
+		if (!result.assets) {
 			setImage(result.assets[0].uri);
 			ToastAndroid.show("Image not selected!", ToastAndroid.SHORT);
 		} else {

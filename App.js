@@ -10,11 +10,11 @@ import Home from "./screens/Home";
 import Login from "./screens/Login";
 import Profile from "./screens/Profile";
 import Register from "./screens/Register";
-import ProfilePictureUpload from "./screens/register/ProfilePictureUpload";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import SignUp from "./screens/SignUp";
-import Events from "./screens/Events";
 import Verify from "./screens/register/Verify";
+import MainEvents from "./screens/MainEvents";
+import CreatePost from "./screens/CreatePost";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -72,8 +72,21 @@ export default function App() {
 						}}
 					/>
 					<Tab.Screen
+						name="createpost"
+						component={CreatePost}
+						options={{
+							tabBarIcon: ({ color }) => (
+								<MaterialIcons
+									name="add-circle"
+									color={color}
+									size={26}
+								/>
+							),
+						}}
+					/>
+					<Tab.Screen
 						name="events"
-						component={Events}
+						component={MainEvents}
 						options={{
 							tabBarIcon: ({ color }) => (
 								<MaterialIcons
