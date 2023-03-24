@@ -9,7 +9,6 @@ import {
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import CreatePost from "../components/CreatePost";
 import Post from "../components/Post";
 
 export default function Home() {
