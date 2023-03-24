@@ -14,7 +14,7 @@ import { useNavigation } from "@react-navigation/native";
 
 export default function Create() {
 	const [image, setImage] = useState(null);
-	const navigate = useNavigation()
+	const navigate = useNavigation();
 
 	const pickImage = async () => {
 		const permissionResult =
@@ -39,7 +39,7 @@ export default function Create() {
 	};
 
 	return (
-		<SafeAreaView style={{flex : 1}}>
+		<SafeAreaView style={{ flex: 1 }}>
 			<Text
 				style={{
 					fontFamily: "Gloock-Regular",
