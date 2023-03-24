@@ -13,8 +13,9 @@ import Register from "./screens/Register";
 import ProfilePictureUpload from "./screens/register/ProfilePictureUpload";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import SignUp from "./screens/SignUp";
-import Events from "./screens/Events";
+import Events from "./screens/events/Events";
 import Verify from "./screens/register/Verify";
+import MainEvents from "./screens/MainEvents";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -73,7 +74,7 @@ export default function App() {
 					/>
 					<Tab.Screen
 						name="events"
-						component={Events}
+						component={MainEvents}
 						options={{
 							tabBarIcon: ({ color }) => (
 								<MaterialIcons
