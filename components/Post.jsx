@@ -79,7 +79,9 @@ export default function Post() {
 
 const styles = StyleSheet.create({
 	container: {
-		padding: 20,
+		marginBottom: 10 ,
+		padding: 15,
+		backgroundColor: 'white'
 	},
 	headerCont: {
 		flexDirection: "row",

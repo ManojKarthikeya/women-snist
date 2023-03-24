@@ -14,6 +14,7 @@ import ProfilePictureUpload from "./screens/register/ProfilePictureUpload";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import SignUp from "./screens/SignUp";
 import Events from "./screens/Events";
+import Verify from "./screens/register/Verify";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -103,18 +104,14 @@ export default function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator
-<<<<<<< HEAD
-				initialRouteName="Verify"
-=======
-				initialRouteName="ProfilePictureUpload"
->>>>>>> 18c22a201c601d36dc7f49548ad3ddc222240f60
+				initialRouteName="GetStarted"
 				screenOptions={{ headerShown: false }}
 			>
 				<Stack.Screen name="GetStarted" component={GetStarted} />
 				<Stack.Screen name="SignUp" component={SignUp} />
 				<Stack.Screen name="Login" component={Login} />
 				<Stack.Screen name="Register" component={Register} />
-				<Stack.Screen name="Verify" component={ProfilePictureUpload} />
+				<Stack.Screen name="Verify" component={Verify} />
 			</Stack.Navigator>
 		</NavigationContainer>
 	);
