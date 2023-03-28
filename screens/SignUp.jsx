@@ -13,11 +13,10 @@ export default function SignUp() {
 				source={require("../assets/images/start.png")}
 			/>
 			<Text style={{ ...fonts.h1, paddingVertical: 10 }}>
-				Enterprise team collaboration.
+				One account for everything.
 			</Text>
 			<Text style={fonts.subtext}>
-				Bring together your files, your tools, projects and people.
-				Including a new mobile and desktop application.
+				Create a single account to get started with sharing, posting and much more.
 			</Text>
 			<View style={styles.buttonContainer}>
 				<TouchableOpacity style={styles.register}>

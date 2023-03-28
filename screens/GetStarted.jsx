@@ -20,11 +20,11 @@ export default function GetStarted() {
 				source={require("../assets/images/start0.png")}
 			/>
 			<Text style={{ ...fonts.h1, paddingVertical: 10 }}>
-				Enterprise team something.
+				For all and only Women.
 			</Text>
 			<Text style={fonts.subtext}>
-				Bring together your files, your tools, projects and people.
-				Including a new mobile and desktop application.
+				Join a community of women and share your thoughts, ideas and
+				inspirations. Indulge in events and community sharing.
 			</Text>
 			<TouchableOpacity
 				style={styles.button}

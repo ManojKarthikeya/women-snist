@@ -15,9 +15,11 @@ import SignUp from "./screens/SignUp";
 import Verify from "./screens/register/Verify";
 import MainEvents from "./screens/MainEvents";
 import CreatePost from "./screens/CreatePost";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const queryClient = new QueryClient();
 
 export default function App() {
 	const [user, setUser] = useState(true);
@@ -36,97 +38,101 @@ export default function App() {
 	}
 	if (user) {
 		return (
-			<NavigationContainer>
-				<Tab.Navigator
-					screenOptions={{
-						headerShown: false,
-						tabBarActiveTintColor: "black",
-						tabBarShowLabel: false,
-						tabBarStyle: { height: 60 },
-					}}
-				>
-					<Tab.Screen
-						name="home"
-						component={Home}
-						options={{
-							tabBarIcon: ({ color }) => (
-								<MaterialIcons
-									name="home"
-									color={color}
-									size={26}
-								/>
-							),
+			<QueryClientProvider client={queryClient}>
+				<NavigationContainer>
+					<Tab.Navigator
+						screenOptions={{
+							headerShown: false,
+							tabBarActiveTintColor: "black",
+							tabBarShowLabel: false,
+							tabBarStyle: { height: 60 },
 						}}
-					/>
-					<Tab.Screen
-						name="communities"
-						component={Communities}
-						options={{
-							tabBarIcon: ({ color }) => (
-								<MaterialIcons
-									name="groups"
-									color={color}
-									size={26}
-								/>
-							),
-						}}
-					/>
-					<Tab.Screen
-						name="createpost"
-						component={CreatePost}
-						options={{
-							tabBarIcon: ({ color }) => (
-								<MaterialIcons
-									name="add-circle"
-									color={color}
-									size={26}
-								/>
-							),
-						}}
-					/>
-					<Tab.Screen
-						name="events"
-						component={MainEvents}
-						options={{
-							tabBarIcon: ({ color }) => (
-								<MaterialIcons
-									name="event-available"
-									color={color}
-									size={26}
-								/>
-							),
-						}}
-					/>
-					<Tab.Screen
-						name="profile"
-						component={Profile}
-						options={{
-							tabBarIcon: ({ color }) => (
-								<MaterialIcons
-									name="account-circle"
-									color={color}
-									size={26}
-								/>
-							),
-						}}
-					/>
-				</Tab.Navigator>
-			</NavigationContainer>
+					>
+						<Tab.Screen
+							name="home"
+							component={Home}
+							options={{
+								tabBarIcon: ({ color }) => (
+									<MaterialIcons
+										name="home"
+										color={color}
+										size={26}
+									/>
+								),
+							}}
+						/>
+						<Tab.Screen
+							name="communities"
+							component={Communities}
+							options={{
+								tabBarIcon: ({ color }) => (
+									<MaterialIcons
+										name="groups"
+										color={color}
+										size={26}
+									/>
+								),
+							}}
+						/>
+						<Tab.Screen
+							name="createpost"
+							component={CreatePost}
+							options={{
+								tabBarIcon: ({ color }) => (
+									<MaterialIcons
+										name="add-circle"
+										color={color}
+										size={26}
+									/>
+								),
+							}}
+						/>
+						<Tab.Screen
+							name="events"
+							component={MainEvents}
+							options={{
+								tabBarIcon: ({ color }) => (
+									<MaterialIcons
+										name="event-available"
+										color={color}
+										size={26}
+									/>
+								),
+							}}
+						/>
+						<Tab.Screen
+							name="profile"
+							component={Profile}
+							options={{
+								tabBarIcon: ({ color }) => (
+									<MaterialIcons
+										name="account-circle"
+										color={color}
+										size={26}
+									/>
+								),
+							}}
+						/>
+					</Tab.Navigator>
+				</NavigationContainer>
+			</QueryClientProvider>
 		);
 	}
 	return (
-		<NavigationContainer>
-			<Stack.Navigator
-				initialRouteName="GetStarted"
-				screenOptions={{ headerShown: false }}
-			>
-				<Stack.Screen name="GetStarted" component={GetStarted} />
-				<Stack.Screen name="SignUp" component={SignUp} />
-				<Stack.Screen name="Login" component={Login} />
-				<Stack.Screen name="Register" component={Register} />
-				<Stack.Screen name="Verify" component={Verify} />
-			</Stack.Navigator>
-		</NavigationContainer>
+		<QueryClientProvider client={queryClient}>
+			<NavigationContainer>
+				<Stack.Navigator
+					initialRouteName="GetStarted"
+					screenOptions={{ headerShown: false }}
+				>
+					<Stack.Screen name="GetStarted" component={GetStarted} />
+					<Stack.Screen name="SignUp" component={SignUp} />
+					<Stack.Screen name="Login" component={Login} />
+					<Stack.Screen name="Register" component={Register} />
+					<Stack.Screen name="Verify" component={Verify} />
+				</Stack.Navigator>
+			</NavigationContainer>
+		</QueryClientProvider>
 	);
 }
 
@@ -137,6 +143,3 @@ const styles = StyleSheet.create({
 		justifyContent: "center",
 	},
 });
-
-
-

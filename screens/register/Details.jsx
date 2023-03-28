@@ -6,17 +6,25 @@ import {
 	useWindowDimensions,
 	TouchableOpacity,
 } from "react-native";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import { profileContext } from "../Register";
 
-export default function Deatils() {
+export default function Deatils({
+	name,
+	setName,
+	age,
+	setAge,
+	email,
+	setEmail,
+	location,
+	setLocation,
+	createUser
+}) {
 	const { width, height } = useWindowDimensions();
 	const navigation = useNavigation();
-	const [age, setAge] = useState("");
-	const [name, setName] = useState("");
-	const [email, setEmail] = useState("");
 	return (
 		<SafeAreaView
 			style={{ ...styles.container, width: width, maxWidth: width }}
@@ -50,13 +58,25 @@ export default function Deatils() {
 					value={email}
 					onChangeText={(text) => setEmail(text)}
 				/>
-				<Text>Add location picker here</Text>
+				<TextInput
+					style={styles.input}
+					placeholder="Location"
+					textContentType="location"
+					keyboardType="default"
+					value={location}
+					onChangeText={(text) => setLocation(text)}
+				/>
 			</View>
-			{name && email && age ? (
+			{name &&
+			email &&
+			age &&
+			email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/) &&
+			location ? (
 				<TouchableOpacity
 					style={styles.touch}
 					onPress={() => {
 						navigation.navigate("createpassword");
+						createUser()
 					}}
 				>
 					<Text style={styles.next}>Next</Text>

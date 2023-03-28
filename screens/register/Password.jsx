@@ -11,10 +11,9 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Password() {
+export default function Password({password, setPassword}) {
 	const { width, height } = useWindowDimensions();
 	const navigate = useNavigation()
-	const [password, setPassword] = useState("");
 	const [confirm, setConfirm] = useState("");
 	const [show, setShow] = useState(false);
 	return (
